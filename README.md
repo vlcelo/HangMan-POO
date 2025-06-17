@@ -55,7 +55,7 @@ Este projeto foi desenvolvido como parte da disciplina de Programação Orientad
 ---
 
 ## 🙌 Créditos
-Desenvolvido por: Marcelo Vinicius Leicht, João Vitor Rosera, Gustavo Rosário e Vinicius H. Werner Hardt
+Desenvolvido por: Marcelo Vinicius Leicht, João Vitor Rosera, Gustavo do Rosário Nunes e Vinicius H. Werner Hardt
 Curso: Engenharia de Software
 Instituição: UNIVILLE - Joinville-SC
 Professor: Leanderson André
