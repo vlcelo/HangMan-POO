@@ -40,15 +40,21 @@ O projeto utiliza e demonstra os seguintes pilares da POO:
 ├── ranking.txt # Arquivo de pontuação dos jogadores
 └── README.md # Descrição do projeto
 
-##📌 Requisitos Técnicos:
+---
+
+## 📌 Requisitos Técnicos:
 - Java 8 ou superior
 - Terminal (Linha de Comando)
 - Editor de texto (recomendado: VS Code, IntelliJ ou Eclipse)
 
-##👨‍🏫 Projeto Acadêmico
+---
+
+## 👨‍🏫 Projeto Acadêmico
 Este projeto foi desenvolvido como parte da disciplina de Programação Orientada a Objetos, do curso de Engenharia de Software. Todos os requisitos foram cumpridos conforme orientação docente.
 
-##🙌 Créditos
+---
+
+## 🙌 Créditos
 Desenvolvido por: Marcelo Vinicius Leicht, João Vitor Rosera, Gustavo Rosário e Vinicius H. Werner Hardt
 Curso: Engenharia de Software
 Instituição: UNIVILLE - Joinville-SC
