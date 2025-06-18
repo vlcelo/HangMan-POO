@@ -61,29 +61,29 @@ Siga os passos abaixo para compilar e executar o jogo diretamente no seu computa
 ---
 
 ## 📥 Passo 1 – Baixar o projeto
-Você pode clonar o repositório via Git ou baixar como .zip:
-git clone https://github.com/vlcelo/HangMan-POO.git
-Ou clique em Code > Download ZIP, depois extraia os arquivos.
+- Você pode clonar o repositório via Git ou baixar como .zip:
+- git clone https://github.com/vlcelo/HangMan-POO.git
+- Ou clique em Code > Download ZIP, depois extraia os arquivos.
 
 ## 📁 Passo 2 – Acesse a pasta do projeto
-Entre na pasta projeto, onde estão os arquivos .java:
-cd HangMan-POO/projeto
-No Windows (via Prompt de Comando):
-cd "C:\caminho\ate\HangMan-POO\projeto"
+- Entre na pasta projeto, onde estão os arquivos .java:
+- cd HangMan-POO/projeto
+- No Windows (via Prompt de Comando):
+- cd "C:\caminho\ate\HangMan-POO\projeto"
 
 ## 🛠️ Passo 3 – Compilar o código
-Compile todos os arquivos .java com o comando:
-javac *.java
-Isso vai gerar os arquivos .class necessários para executar o jogo.
+- Compile todos os arquivos .java com o comando:
+- javac *.java
+- Isso vai gerar os arquivos .class necessários para executar o jogo.
 
 ## ▶️ Passo 4 – Rodar o jogo
-Agora execute o jogo com:
-java HangmanGame
-O jogo iniciará no terminal e pedirá o nome do jogador. A partir daí, é só seguir as instruções na tela!
+- Agora execute o jogo com:
+- java HangmanGame
+- O jogo iniciará no terminal e pedirá o nome do jogador. A partir daí, é só seguir as instruções na tela!
 
 ## 💾 Arquivos necessários
-palavras.txt → contém o banco de palavras para o jogo (será criado automaticamente com palavras padrão se não existir)
-ranking.txt → salva a pontuação dos jogadores
+- palavras.txt → contém o banco de palavras para o jogo (será criado automaticamente com palavras padrão se não existir)
+- ranking.txt → salva a pontuação dos jogadores
 
 ## ✅ Exemplo de uso
 - Digite seu nome: Ariovaldo
@@ -93,9 +93,9 @@ ranking.txt → salva a pontuação dos jogadores
 - Adivinhe uma letra ou a palavra completa: A
 
 ## 🙋‍♂️ Dúvidas?
-Se aparecer erro como:
-Erro: Não foi possível localizar nem carregar a classe principal HangmanGame
-Certifique-se de que:
+- Se aparecer erro como:
+- Erro: Não foi possível localizar nem carregar a classe principal HangmanGame
+- Certifique-se de que:
 
 - Você está na pasta correta
 - Os arquivos .class foram gerados com javac
