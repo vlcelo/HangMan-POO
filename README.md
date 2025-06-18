@@ -94,8 +94,8 @@ Siga os passos abaixo para compilar e executar o jogo diretamente no seu computa
 
 ## 🙋‍♂️ Dúvidas?
 - Se aparecer erro como:
-- Erro: Não foi possível localizar nem carregar a classe principal HangmanGame
-- Certifique-se de que:
+"Erro: Não foi possível localizar nem carregar a classe principal HangmanGame"
+Certifique-se de que:
 
 - Você está na pasta correta
 - Os arquivos .class foram gerados com javac
