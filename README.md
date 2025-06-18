@@ -86,11 +86,11 @@ palavras.txt → contém o banco de palavras para o jogo (será criado automatic
 ranking.txt → salva a pontuação dos jogadores
 
 ## ✅ Exemplo de uso
--Digite seu nome: Ariovaldo
---INICIO DA NOVA RODADA--
--Palavra: _ _ _ _ _ _
--Tentativas restantes: 6
--Adivinhe uma letra ou a palavra completa: A
+- Digite seu nome: Ariovaldo
+- ---INICIO DA NOVA RODADA---
+- Palavra: _ _ _ _ _ _
+- Tentativas restantes: 6
+- Adivinhe uma letra ou a palavra completa: A
 
 ## 🙋‍♂️ Dúvidas?
 Se aparecer erro como:
