@@ -1,4 +1,3 @@
-// Implementação do Jogo da Forca
 import java.io.*;
 import java.util.*;
 
@@ -17,14 +16,14 @@ public class HangmanGame extends Game implements GamePersistence {
 
         List<String> initialWords = loadWords(wordsFilename);
         if (initialWords.isEmpty()) {
-            System.out.println("Arquivo de palavras não encontrado ou vazio. Usando palavras padrão.");
+            System.out.println("Arquivo de palavras nao encontrado ou vazio. Usando palavras padrao.");
             initialWords.addAll(Arrays.asList("PROGRAMACAO", "ORIENTADA", "OBJETOS", "JAVASCRIPT", "COMPUTADOR"));
             try (FileWriter writer = new FileWriter(wordsFilename)) {
                 for (String word : initialWords) {
                     writer.write(word + System.lineSeparator());
                 }
             } catch (IOException e) {
-                System.err.println("Erro ao salvar palavras padrão: " + e.getMessage());
+                System.err.println("Erro ao salvar palavras padrao: " + e.getMessage());
             }
         }
 
@@ -34,7 +33,7 @@ public class HangmanGame extends Game implements GamePersistence {
 
     @Override
     public void startGame() {
-        System.out.println("\n--- INÍCIO DA NOVA RODADA ---");
+        System.out.println("\n--- INICIO DA NOVA RODADA ---");
         System.out.println("Bem-vindo ao " + gameName + ", " + currentPlayer.getName() + "!");
         remainingAttempts = maxAttempts;
         gameEnded = false;
@@ -46,12 +45,12 @@ public class HangmanGame extends Game implements GamePersistence {
     @Override
     public boolean makeGuess(String guess) {
         if (gameEnded) {
-            System.out.println("O jogo já terminou. Por favor, inicie uma nova rodada.");
+            System.out.println("O jogo ja terminou. Por favor, inicie uma nova rodada.");
             return false;
         }
 
         if (guess == null || guess.isEmpty()) {
-            System.out.println("Palpite inválido. Tente novamente.");
+            System.out.println("Palpite invalido. Tente novamente.");
             return false;
         }
 
@@ -60,25 +59,25 @@ public class HangmanGame extends Game implements GamePersistence {
         if (guess.length() == 1) {
             char letter = guess.charAt(0);
             if (!Character.isLetter(letter)) {
-                System.out.println("Insira uma letra válida.");
+                System.out.println("Insira uma letra valida.");
                 return false;
             }
 
             if (wordManager.getGuessedLetters().contains(letter)) {
-                System.out.println("Você já tentou a letra '" + letter + "'.");
+                System.out.println("Voce ja tentou a letra '" + letter + "'.");
                 return false;
             }
 
             if (wordManager.revealLetter(letter)) {
-                System.out.println("Acertou! A letra '" + letter + "' está na palavra.");
+                System.out.println("Acertou! A letra '" + letter + "' esta na palavra.");
                 currentPlayer.addScore(10);
             } else {
-                System.out.println("Errou! A letra '" + letter + "' não está na palavra.");
+                System.out.println("Errou! A letra '" + letter + "' nao esta na palavra.");
                 remainingAttempts--;
             }
         } else {
             if (guess.equals(wordManager.getCurrentWord())) {
-                System.out.println("Parabéns! Você acertou a palavra completa!");
+                System.out.println("Parabens! Voce acertou a palavra completa!");
                 for (int i = 0; i < wordManager.getCurrentWord().length(); i++) {
                     wordManager.revealLetter(wordManager.getCurrentWord().charAt(i));
                 }
@@ -96,7 +95,7 @@ public class HangmanGame extends Game implements GamePersistence {
 
     private void checkGameStatus() {
         if (wordManager.isWordGuessed() && !gameEnded) {
-            System.out.println("\n🎉 Parabéns! Você adivinhou a palavra: " + wordManager.getCurrentWord() + " 🎉");
+            System.out.println("\nParabens! Voce adivinhou a palavra: " + wordManager.getCurrentWord());
             gameEnded = true;
         } else if (remainingAttempts <= 0) {
             System.out.println("\nGame Over! A palavra era: " + wordManager.getCurrentWord());
@@ -105,7 +104,7 @@ public class HangmanGame extends Game implements GamePersistence {
 
         if (gameEnded) {
             scoreManager.updateScore(currentPlayer.getName(), currentPlayer.getScore());
-            System.out.println("Pontuação final nesta rodada: " + currentPlayer.getScore() + " pontos.");
+            System.out.println("Pontuacao final nesta rodada: " + currentPlayer.getScore() + " pontos.");
         }
     }
 
@@ -114,18 +113,32 @@ public class HangmanGame extends Game implements GamePersistence {
         System.out.println("\nPalavra: " + wordManager.getDisplayedWord());
         System.out.println("Tentativas restantes: " + remainingAttempts);
         System.out.println("Letras tentadas: " + wordManager.getGuessedLetters());
-        System.out.println("Pontuação: " + currentPlayer.getScore());
+        System.out.println("Pontuacao: " + currentPlayer.getScore());
     }
 
     private void displayHangmanState() {
         switch (remainingAttempts) {
-            case 6 -> System.out.println("  +---+\n  |   |\n      |\n      |\n      |\n      |\n=========");
-            case 5 -> System.out.println("  +---+\n  |   |\n  O   |\n      |\n      |\n      |\n=========");
-            case 4 -> System.out.println("  +---+\n  |   |\n  O   |\n  |   |\n      |\n      |\n=========");
-            case 3 -> System.out.println("  +---+\n  |   |\n  O   |\n /|   |\n      |\n      |\n=========");
-            case 2 -> System.out.println("  +---+\n  |   |\n  O   |\n /|\\  |\n      |\n      |\n=========");
-            case 1 -> System.out.println("  +---+\n  |   |\n  O   |\n /|\\  |\n /    |\n      |\n=========");
-            case 0 -> System.out.println("  +---+\n  |   |\n  O   |\n /|\\  |\n / \\  |\n      |\n=========");
+            case 6:
+                System.out.println("  +---+\n  |   |\n      |\n      |\n      |\n      |\n=========");
+                break;
+            case 5:
+                System.out.println("  +---+\n  |   |\n  O   |\n      |\n      |\n      |\n=========");
+                break;
+            case 4:
+                System.out.println("  +---+\n  |   |\n  O   |\n  |   |\n      |\n      |\n=========");
+                break;
+            case 3:
+                System.out.println("  +---+\n  |   |\n  O   |\n /|   |\n      |\n      |\n=========");
+                break;
+            case 2:
+                System.out.println("  +---+\n  |   |\n  O   |\n /|\\  |\n      |\n      |\n=========");
+                break;
+            case 1:
+                System.out.println("  +---+\n  |   |\n  O   |\n /|\\  |\n /    |\n      |\n=========");
+                break;
+            case 0:
+                System.out.println("  +---+\n  |   |\n  O   |\n /|\\  |\n / \\  |\n      |\n=========");
+                break;
         }
     }
 
