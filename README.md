@@ -49,6 +49,11 @@ O projeto utiliza e demonstra os seguintes pilares da POO:
 
 ---
 
+## 👨‍🏫 Projeto Acadêmico
+Este projeto foi desenvolvido como parte da disciplina de Programação Orientada a Objetos, do curso de Engenharia de Software. Todos os requisitos foram cumpridos conforme orientação docente.
+
+---
+
 # 🎮 Como jogar este jogo da forca em Java
 
 Siga os passos abaixo para compilar e executar o jogo diretamente no seu computador.
@@ -95,11 +100,6 @@ Certifique-se de que:
 - Você está na pasta correta
 - Os arquivos .class foram gerados com javac
 - O nome do arquivo é HangmanGame.java com a primeira letra maiúscula
-
----
-
-## 👨‍🏫 Projeto Acadêmico
-Este projeto foi desenvolvido como parte da disciplina de Programação Orientada a Objetos, do curso de Engenharia de Software. Todos os requisitos foram cumpridos conforme orientação docente.
 
 ---
 
