@@ -30,15 +30,15 @@ O projeto utiliza e demonstra os seguintes pilares da POO:
 ---
 
 ## 📁 Estrutura de Arquivos
-├── Game.java # Classe abstrata base para jogos
-├── GamePersistence.java # Interface para persistência de dados
-├── HangmanGame.java # Implementação principal do jogo
-├── Player.java # Classe que representa o jogador
-├── ScoreManager.java # Classe que gerencia o ranking
-├── WordManager.java # Gerencia a seleção e exibição das palavras
-├── palavras.txt # Banco de palavras
-├── ranking.txt # Arquivo de pontuação dos jogadores
-└── README.md # Descrição do projeto
+- ├── Game.java # Classe abstrata base para jogos
+- ├── GamePersistence.java # Interface para persistência de dados
+- ├── HangmanGame.java # Implementação principal do jogo
+- ├── Player.java # Classe que representa o jogador
+- ├── ScoreManager.java # Classe que gerencia o ranking
+- ├── WordManager.java # Gerencia a seleção e exibição das palavras
+- ├── palavras.txt # Banco de palavras
+- ├── ranking.txt # Arquivo de pontuação dos jogadores
+- └── README.md # Descrição do projeto
 
 ---
 
