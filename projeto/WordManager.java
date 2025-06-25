@@ -6,9 +6,10 @@ class WordManager {
     private String currentWord;
     private Set<Character> guessedLetters;
     private StringBuilder displayedWord;
+    private String lastWord = "";
 
     public WordManager(List<String> words) {
-        this.words = words;
+        this.words = new ArrayList<>(words);
         this.guessedLetters = new HashSet<>();
     }
 
@@ -19,7 +20,12 @@ class WordManager {
             return;
         }
         Random random = new Random();
-        currentWord = words.get(random.nextInt(words.size())).toUpperCase();
+        String newWord;
+        do {
+            newWord = words.get(random.nextInt(words.size())).toUpperCase();
+        } while (newWord.equals(lastWord) && words.size() > 1);
+        lastWord = newWord;
+        currentWord = newWord;
         displayedWord = new StringBuilder(currentWord.length());
         for (int i = 0; i < currentWord.length(); i++) {
             displayedWord.append('_');
@@ -36,7 +42,11 @@ class WordManager {
     }
 
     public String getDisplayedWord() {
-        return displayedWord.toString();
+        StringBuilder spaced = new StringBuilder();
+        for (int i = 0; i < displayedWord.length(); i++) {
+            spaced.append(displayedWord.charAt(i)).append(" ");
+        }
+        return spaced.toString().trim();
     }
 
     public boolean revealLetter(char letter) {
