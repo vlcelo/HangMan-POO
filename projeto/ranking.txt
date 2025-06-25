@@ -1,0 +1,6 @@
+bofe:150
+celouco:200
+vasco:1
+rironesonte:80
+growth:70
+celo:10

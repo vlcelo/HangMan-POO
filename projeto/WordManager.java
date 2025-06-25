@@ -1,31 +1,47 @@
-// Gerencia a seleção e validação de palavras
 import java.util.*;
 
 class WordManager {
-    private List<String> words;
+    private Map<String, List<String>> categorizedWords = new HashMap<>();
     private String currentWord;
+    private String currentCategory;
     private Set<Character> guessedLetters;
     private StringBuilder displayedWord;
     private String lastWord = "";
 
-    public WordManager(List<String> words) {
-        this.words = new ArrayList<>(words);
+    public WordManager(List<String> lines) {
         this.guessedLetters = new HashSet<>();
+        for (String line : lines) {
+            String[] parts = line.split(":", 2);
+            if (parts.length == 2) {
+                String category = parts[0].trim().toUpperCase();
+                String word = parts[1].trim().toUpperCase();
+                categorizedWords.computeIfAbsent(category, k -> new ArrayList<>()).add(word);
+            }
+        }
     }
 
     public void selectRandomWord() {
-        if (words.isEmpty()) {
-            System.err.println("Erro: Nenhuma palavra disponível.");
+        List<String> categories = new ArrayList<>(categorizedWords.keySet());
+        if (categories.isEmpty()) {
+            System.err.println("Erro: Nenhuma palavra com categoria disponível.");
             currentWord = "";
+            currentCategory = "INDEFINIDA";
             return;
         }
+
         Random random = new Random();
-        String newWord;
+        String category;
+        String word;
+
         do {
-            newWord = words.get(random.nextInt(words.size())).toUpperCase();
-        } while (newWord.equals(lastWord) && words.size() > 1);
-        lastWord = newWord;
-        currentWord = newWord;
+            category = categories.get(random.nextInt(categories.size()));
+            List<String> words = categorizedWords.get(category);
+            word = words.get(random.nextInt(words.size()));
+        } while (word.equals(lastWord) && categorizedWords.values().stream().mapToInt(List::size).sum() > 1);
+
+        lastWord = word;
+        currentWord = word;
+        currentCategory = category;
         displayedWord = new StringBuilder(currentWord.length());
         for (int i = 0; i < currentWord.length(); i++) {
             displayedWord.append('_');
@@ -35,6 +51,10 @@ class WordManager {
 
     public String getCurrentWord() {
         return currentWord;
+    }
+
+    public String getCurrentCategory() {
+        return currentCategory;
     }
 
     public Set<Character> getGuessedLetters() {

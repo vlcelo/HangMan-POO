@@ -38,8 +38,7 @@ public class HangmanGame extends Game implements GamePersistence {
         remainingAttempts = maxAttempts;
         gameEnded = false;
         wordManager.selectRandomWord();
-        displayHangmanState();
-        displayGameState();
+        System.out.println("Categoria da palavra: " + wordManager.getCurrentCategory());
     }
 
     @Override
